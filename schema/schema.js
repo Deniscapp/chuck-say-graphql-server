@@ -45,7 +45,6 @@ const RootQuery = new GraphQLObjectType({
         },
         categories: {
             type: new GraphQLList(GraphQLString),
-            args: { name: { type: GraphQLString } },
             async resolve(parentValue, args) {
                 let res;
                 try {
