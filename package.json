@@ -1,0 +1,21 @@
+{
+  "name": "chuck-say-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^0.12.3",
+    "koa": "^2.4.1",
+    "koa-graphql": "^0.7.3",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.10"
+  }
+}
