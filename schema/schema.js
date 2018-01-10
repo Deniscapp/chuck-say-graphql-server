@@ -42,6 +42,44 @@ const RootQuery = new GraphQLObjectType({
                 
                 return data.result;
             }
+        },
+        categories: {
+            type: new GraphQLList(GraphQLString),
+            async resolve(parentValue, args) {
+                let res;
+                try {
+                    res = await fetch('https://api.chucknorris.io/jokes/categories');
+                } catch (err) {
+                    console.log(err);
+                }
+                let data;
+                try {
+                    data = await res.json();
+                } catch (err) {
+                    throw new Error(err);
+                }
+                return data;
+            }
+        },
+        category: {
+            type: ChuckNorrisFact,
+            args: { name: { type: GraphQLString } },
+            async resolve(parentValue, { name }) {
+                let res;
+                try {
+                    res = await fetch(`https://api.chucknorris.io/jokes/random?category=${name}`);
+                } catch (err) {
+                    console.log(err);
+                }
+                let data;
+                try {
+                    data = await res.json();
+                } catch (err) {
+                    throw new Error(err);
+                }
+                
+                return data;
+            }
         }
     }
 });
