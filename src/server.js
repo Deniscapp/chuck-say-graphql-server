@@ -1,6 +1,6 @@
-const koa = require('koa');
-const graphqlHttp = require('koa-graphql');
-const schema = require('./schema/schema');
+import koa from'koa';
+import graphqlHttp from 'koa-graphql';
+import schema from '../lib/schema';
 const PORT = process.env.PORT || 4001
 
 const app = new koa();
