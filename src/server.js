@@ -1,7 +1,8 @@
 import koa from'koa';
 import graphqlHttp from 'koa-graphql';
-import schema from '../lib/schema';
-const PORT = process.env.PORT || 4001
+import { schema } from './schema';
+
+const PORT = process.env.PORT || 3000
 
 const app = new koa();
 
